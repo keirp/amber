@@ -1,3 +1,5 @@
+![](http://keirp.com/projects/chatbotkit/docs/logo.png)
+
 ## Synopsis
 
 Amber is a simple node.js framework for making personal assistants.
