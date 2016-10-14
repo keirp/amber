@@ -1,6 +1,6 @@
 {
   "name": "amberchat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A framework for making digital assistants.",
   "main": "index.js",
   "directories": {
