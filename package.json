@@ -1,0 +1,19 @@
+{
+  "name": "amberchat",
+  "version": "1.0.1",
+  "description": "A framework for making digital assistants.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "chrono-node": "^1.2.3",
+    "fifo": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "keirp",
+  "license": "ISC"
+}

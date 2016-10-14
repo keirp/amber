@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Amber.Bot.Session - Amber</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../logo.png" title="Amber"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Amber.html">Amber</a></li>
+                                <li><a href="../classes/Amber.Bot.html">Amber.Bot</a></li>
+                                <li><a href="../classes/Amber.Bot.Session.html">Amber.Bot.Session</a></li>
+                                <li><a href="../classes/Amber.utils.html">Amber.utils</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Amber.Bot.Session Class</h1>
+<div class="box meta">
+
+
+
+
+</div>
+
+
+<div class="box intro">
+    <p>A chatbot session, usually representing an instance of chat
+between a user and the chatbot.</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_customPrompt">customPrompt</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_datePrompt">datePrompt</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_get">get</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getRequire">getRequire</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_messageReceived">messageReceived</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_messageSent">messageSent</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_numberPrompt">numberPrompt</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_prompt">prompt</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_selectionPrompt">selectionPrompt</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_sendMessage">sendMessage</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_set">set</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_customPrompt" class="method item">
+    <h3 class="name"><code>customPrompt</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+                <li class="arg">
+                        <code>filter</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>A custom prompt.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Message to send (usually asking
+the user a question). If message is a null, it won't send
+a message.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">filter</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">session</code>
+                                    <span class="type">Session</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">message</code>
+                                    <span class="type">String</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">callback</code>
+                                    <span class="type">Function</span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">success</code>
+                                                <span class="type">Boolean</span>
+
+                                            <div class="param-description">
+                                                Is the message satisfactory?
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">value</code>
+                                                <span class="type">Object</span>
+
+                                            <div class="param-description">
+                                                The filtered value
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback is called with an argument
+containing the user's filtered response.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>function filter(session, message, callback) {
+    if (!isNaN(parseFloat(message))) {
+        callback(true, parseFloat(message));
+    } else {
+        callback(false);
+    }
+}</code></pre>
+
+            </div>
+        </div>
+</div>
+<div id="method_datePrompt" class="method item">
+    <h3 class="name"><code>datePrompt</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>An asynchronous prompt for numerical information from the user. Responses
+will be validated and if the user does not provide a date answer,
+they will be prompted with a message and asked for another answer. This prompt
+can be set using Bot.setNotADateMessage(message)</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Message to send (usually asking
+the user a question). If message is a null, it won't send
+a message.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback is called with a date object argument
+containing the user's response.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_get" class="method item">
+    <h3 class="name"><code>get</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Object</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Gets a value stored in the Session.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Object</span>:
+                    <p>Returns the value paired with the given key
+for this Session.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getRequire" class="method item">
+    <h3 class="name"><code>getRequire</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>name</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Manually gather a requirement.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">name</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>Called when the requirment is obtained.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_messageReceived" class="method item">
+    <h3 class="name"><code>messageReceived</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Method for inputting a message for processing by
+the chatbot</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The message to be processed.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_messageSent" class="method item">
+    <h3 class="name"><code>messageSent</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Call this method each time a message is successfully sent. This is to ensure
+messages are sent in order.</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_numberPrompt" class="method item">
+    <h3 class="name"><code>numberPrompt</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>An asynchronous prompt for numerical information from the user. Responses
+will be validated and if the user does not provide a numerical answer,
+they will be prompted with a message and asked for another answer. This prompt
+can be set using Bot.setNotANumberMessage(message)</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Message to send (usually asking
+the user a question). If message is a null, it won't send
+a message.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback is called with a numerical argument
+containing the user's response.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_prompt" class="method item">
+    <h3 class="name"><code>prompt</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>A basic asynchronous prompt for information from the user.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Message to send (usually asking
+the user a question). If message is a null, it won't send
+a message.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback is called with a String argument
+containing the user's response.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_selectionPrompt" class="method item">
+    <h3 class="name"><code>selectionPrompt</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+                <li class="arg">
+                        <code>options</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[showMessage=true]</code>
+                </li>
+                <li class="arg">
+                        <code>callback</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>A prompt asking the user to choose from a selection of
+choices. The user can respond by typing the index of
+the choice (indexed by 1) or by typing the choice itself.
+The choice with the shorted Levenshtein distance will be
+chosen.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>Message to send (usually asking
+the user a question). If message is a null, it won't send
+a message.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">options</code>
+                        <span class="type">Array</span>
+
+
+                    <div class="param-description">
+                        <p>An array of strings representing
+the users options.</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[showMessage=true]</code>
+                        <span class="type">Boolean</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>Show the options to the user?</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">callback</code>
+                        <span class="type">Function</span>
+
+
+                    <div class="param-description">
+                        <p>The callback is called with an integer
+argument representing the index of the chosen option.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_sendMessage" class="method item">
+    <h3 class="name"><code>sendMessage</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>message</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Send a message to this Session</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">message</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                        <p>The message to be sent.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_set" class="method item">
+    <h3 class="name"><code>set</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>key</code>
+                </li>
+                <li class="arg">
+                        <code>value</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Set a value in the session.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">key</code>
+                        <span class="type">String</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">value</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

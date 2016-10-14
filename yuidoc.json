@@ -1,0 +1,10 @@
+{
+    "name": "Amber",
+    "description": "A Framework for making personal assistants.",
+    "version": "1.0.0",
+    "url": "http://keirp.com/",
+    "options": {
+        "outdir": "docs/"
+    },
+    "logo": "logo.png"
+}

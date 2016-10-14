@@ -1,0 +1,785 @@
+{
+    "project": {
+        "name": "Amber",
+        "description": "A Framework for making personal assistants.",
+        "version": "1.0.0",
+        "url": "http://keirp.com/",
+        "logo": "logo.png"
+    },
+    "files": {
+        "index.js": {
+            "name": "index.js",
+            "modules": {},
+            "classes": {
+                "Amber": 1,
+                "Amber.Bot": 1,
+                "Amber.Bot.Session": 1,
+                "Amber.utils": 1
+            },
+            "fors": {
+                "Amber": 1,
+                "Amber.Bot": 1,
+                "Amber.Bot.Session": 1,
+                "Amber.utils": 1
+            },
+            "namespaces": {
+                "Amber": 1,
+                "Amber.Bot": 1
+            }
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Amber": {
+            "name": "Amber",
+            "shortname": "Amber",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "Amber",
+            "file": "index.js",
+            "line": 7,
+            "description": "Amber"
+        },
+        "Amber.Bot": {
+            "name": "Amber.Bot",
+            "shortname": "Amber.Bot",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "Amber",
+            "file": "index.js",
+            "line": 12,
+            "description": "A Amber Bot.",
+            "is_constructor": 1
+        },
+        "Amber.Bot.Session": {
+            "name": "Amber.Bot.Session",
+            "shortname": "Amber.Bot.Session",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "Amber.Bot",
+            "file": "index.js",
+            "line": 116,
+            "description": "A chatbot session, usually representing an instance of chat\nbetween a user and the chatbot."
+        },
+        "Amber.utils": {
+            "name": "Amber.utils",
+            "shortname": "Amber.utils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "Amber",
+            "file": "index.js",
+            "line": 624,
+            "description": "Utility module"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "index.js",
+            "line": 24,
+            "description": "Add a target to the chat bot.",
+            "itemtype": "method",
+            "name": "addTarget",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "The name of the target",
+                            "type": "String"
+                        },
+                        {
+                            "name": "requires",
+                            "description": "An array of Strings of the required information\n\tto reach this target.",
+                            "type": "Array"
+                        },
+                        {
+                            "name": "beforeRequire",
+                            "description": "Called before a requirement's `toGet` method \n\tis called. Each key is the name of the requirement and each value is a callback with \n\tthe following arguments.",
+                            "type": "Object",
+                            "optional": true,
+                            "props": [
+                                {
+                                    "name": "session",
+                                    "description": "",
+                                    "type": "Session"
+                                },
+                                {
+                                    "name": "callback",
+                                    "description": "Call when done.",
+                                    "type": "Function"
+                                },
+                                {
+                                    "name": "callback.value",
+                                    "description": "A value for the requirement. \n\tIf a value is passed in, toGet will not be called.",
+                                    "type": "Object",
+                                    "optional": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "hasAccess",
+                            "description": "A function that returns whether the given session \n\thas access to this target.",
+                            "type": "Function",
+                            "optional": true,
+                            "props": [
+                                {
+                                    "name": "session",
+                                    "description": "",
+                                    "type": "Session"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "onExecute",
+                            "description": "Called when all requirements are met.",
+                            "type": "Function",
+                            "props": [
+                                {
+                                    "name": "session",
+                                    "description": "",
+                                    "type": "Session"
+                                },
+                                {
+                                    "name": "callback",
+                                    "description": "Call when the target is done executing.",
+                                    "type": "Function"
+                                },
+                                {
+                                    "name": "callback.next",
+                                    "description": "The next target to path to.",
+                                    "type": "String",
+                                    "optional": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "example": [
+                "\n\t{\n\t\tname:'greeting',\n\t\trequires:['name'],\n\t\tonExecute:function(session, callback) {\n\t\t\tsession.sendMessage('Hello there, ' + session.get('name'));\n\t\t\tcallback();\n\t\t}\n\t}"
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 65,
+            "description": "Add a requirement to the bot.",
+            "itemtype": "method",
+            "name": "addRequire",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "The name of the requirement",
+                            "type": "String"
+                        },
+                        {
+                            "name": "requries",
+                            "description": "An array of requirements \n\tthat need to be completed before this requirement can \n\tbe fulfilled.",
+                            "type": "Session",
+                            "optional": true
+                        },
+                        {
+                            "name": "filter",
+                            "description": "Called when a requirement is met externally.",
+                            "type": "Function",
+                            "optional": true,
+                            "props": [
+                                {
+                                    "name": "value",
+                                    "description": "The value passed in externally to meet the\n\trequirement.",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "session",
+                                    "description": "",
+                                    "type": "Session"
+                                },
+                                {
+                                    "name": "value",
+                                    "description": "",
+                                    "type": "Object"
+                                },
+                                {
+                                    "name": "callback",
+                                    "description": "",
+                                    "type": "Function"
+                                },
+                                {
+                                    "name": "callback.success",
+                                    "description": "Whether this input can \n\tsuccessfully meet the requirement.",
+                                    "type": "Boolean"
+                                },
+                                {
+                                    "name": "callback.value",
+                                    "description": "The filtered version of the object.",
+                                    "type": "Object"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "toGet",
+                            "description": "Called to retrieve the value of the requirement.",
+                            "type": "Function",
+                            "props": [
+                                {
+                                    "name": "session",
+                                    "description": "",
+                                    "type": "Session"
+                                },
+                                {
+                                    "name": "callback",
+                                    "description": "",
+                                    "type": "Function"
+                                },
+                                {
+                                    "name": "callback.success",
+                                    "description": "Whether the value was retreived successfully.\n\tIf false, exits the venture for the target.",
+                                    "type": "Boolean"
+                                },
+                                {
+                                    "name": "callback.value",
+                                    "description": "The value of the requirement.",
+                                    "type": "Object"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "example": [
+                " \n\t{\n\t\tname:'name',\n\t\trequires:[],\n\t\tfilter:function(session, name, callback) {\n\t\t\tcallback(true, name);\n\t\t},\n\t\ttoGet:function(session, callback) {\n\t\t\tsession.prompt('What is your name?', function(name) {\n\t\t\t\tcallback(true, name);\n\t\t\t});\n\t\t}\n\t}"
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 110,
+            "description": "Creates a new session.",
+            "itemtype": "method",
+            "name": "createSession",
+            "return": {
+                "description": "Returns a new session.",
+                "type": "Bot.Session"
+            },
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 212,
+            "description": "Gets a value stored in the Session.",
+            "itemtype": "method",
+            "name": "get",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns the value paired with the given key\n\tfor this Session.",
+                "type": "Object"
+            },
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 223,
+            "description": "Set a value in the session.",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 232,
+            "description": "Manually gather a requirement.",
+            "itemtype": "method",
+            "name": "getRequire",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "Called when the requirment is obtained.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 242,
+            "description": "Method for inputting a message for processing by\nthe chatbot",
+            "itemtype": "method",
+            "name": "messageReceived",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "The message to be processed.",
+                    "type": "String"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 309,
+            "description": "Send a message to this Session",
+            "itemtype": "method",
+            "name": "sendMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "The message to be sent.",
+                    "type": "String"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 320,
+            "description": "Call this method each time a message is successfully sent. This is to ensure \n\tmessages are sent in order.",
+            "itemtype": "method",
+            "name": "messageSent",
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 379,
+            "description": "A basic asynchronous prompt for information from the user.",
+            "itemtype": "method",
+            "name": "prompt",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send (usually asking\n\tthe user a question). If message is a null, it won't send \n\ta message.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback is called with a String argument\n\tcontaining the user's response.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 396,
+            "description": "A prompt asking the user to choose from a selection of \nchoices. The user can respond by typing the index of\nthe choice (indexed by 1) or by typing the choice itself.\nThe choice with the shorted Levenshtein distance will be\nchosen.",
+            "itemtype": "method",
+            "name": "selectionPrompt",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send (usually asking\n\tthe user a question). If message is a null, it won't send \n\ta message.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "An array of strings representing\n\tthe users options.",
+                    "type": "Array"
+                },
+                {
+                    "name": "showMessage",
+                    "description": "Show the options to the user?",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "true"
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback is called with an integer\n\targument representing the index of the chosen option.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 429,
+            "description": "An asynchronous prompt for numerical information from the user. Responses\nwill be validated and if the user does not provide a numerical answer, \nthey will be prompted with a message and asked for another answer. This prompt\ncan be set using Bot.setNotANumberMessage(message)",
+            "itemtype": "method",
+            "name": "numberPrompt",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send (usually asking\n\tthe user a question). If message is a null, it won't send \n\ta message.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback is called with a numerical argument\n\tcontaining the user's response.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 449,
+            "description": "An asynchronous prompt for numerical information from the user. Responses\nwill be validated and if the user does not provide a date answer, \nthey will be prompted with a message and asked for another answer. This prompt\ncan be set using Bot.setNotADateMessage(message)",
+            "itemtype": "method",
+            "name": "datePrompt",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send (usually asking\n\tthe user a question). If message is a null, it won't send \n\ta message.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback is called with a date object argument\n\tcontaining the user's response.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 469,
+            "description": "A custom prompt.",
+            "itemtype": "method",
+            "name": "customPrompt",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send (usually asking\n\tthe user a question). If message is a null, it won't send \n\ta message.",
+                    "type": "String"
+                },
+                {
+                    "name": "filter",
+                    "description": "",
+                    "type": "Function",
+                    "props": [
+                        {
+                            "name": "session",
+                            "description": "",
+                            "type": "Session"
+                        },
+                        {
+                            "name": "message",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "callback",
+                            "description": "",
+                            "type": "Function",
+                            "props": [
+                                {
+                                    "name": "success",
+                                    "description": "Is the message satisfactory?",
+                                    "type": "Boolean"
+                                },
+                                {
+                                    "name": "value",
+                                    "description": "The filtered value",
+                                    "type": "Object"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "callback",
+                    "description": "The callback is called with an argument\n\tcontaining the user's filtered response.",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n\tfunction filter(session, message, callback) {\n\t\tif (!isNaN(parseFloat(message))) {\n\t\t\tcallback(true, parseFloat(message));\n\t\t} else {\n\t\t\tcallback(false);\n\t\t}\n\t}"
+            ],
+            "class": "Amber.Bot.Session",
+            "namespace": "Amber.Bot"
+        },
+        {
+            "file": "index.js",
+            "line": 506,
+            "description": "Set the callback for sending messages to the user.",
+            "itemtype": "method",
+            "name": "setMessageSender",
+            "params": [
+                {
+                    "name": "sender",
+                    "description": "`sender(session, message)` A callback\n\tthat is passed a Session and the message to send.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 519,
+            "description": "Set the method that turns messages into targets.",
+            "itemtype": "method",
+            "name": "setTargetParser",
+            "params": [
+                {
+                    "name": "parser",
+                    "description": "`parser(message, callback)` A callback \n\tthat is passed a message. When the target has been identified,\n\tcall the callback with the target as an argument.",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n\tbot.setTargetParser(function(message, callback) {\n\t\tif (message == 'hello') {\n\t\t\tcallback('greeting', {});\n\t\t} else if (message == 'hello. my name is bob.') {\n\t\t\tcallback('greeting', {'name':'bob'});\n\t\t} else {\n\t\t\tcallback('none', {});\n\t\t}\n\t});"
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 539,
+            "description": "The default selection message renderer for convenience.",
+            "itemtype": "method",
+            "name": "defaultSelectionMessage",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "The message",
+                "type": "String"
+            },
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 556,
+            "description": "Set a custom selection message to present choices to users.",
+            "itemtype": "method",
+            "name": "setSelectionMessage",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "`f(options)` A callback that is passed the options and returns\n\ta String representation.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 568,
+            "description": "Set a listener for reaching targets.",
+            "itemtype": "method",
+            "name": "setOnTargetReach",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "",
+                    "type": "Function",
+                    "props": [
+                        {
+                            "name": "target",
+                            "description": "",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 577,
+            "description": "Sets a method to decide if the current message received from \n\tthe user will cancel it.",
+            "itemtype": "method",
+            "name": "setCancelListener",
+            "params": [
+                {
+                    "name": "f",
+                    "description": "",
+                    "type": "Function",
+                    "props": [
+                        {
+                            "name": "callback",
+                            "description": "",
+                            "type": "Function",
+                            "props": [
+                                {
+                                    "name": "cancel",
+                                    "description": "",
+                                    "type": "Boolean"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "session",
+                    "description": "",
+                    "type": "Session"
+                },
+                {
+                    "name": "message",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 596,
+            "description": "Set a message to be sent to the user when their answer to a\nSession.numberPrompt is not numerical",
+            "itemtype": "method",
+            "name": "setNotANumberMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send",
+                    "type": "String"
+                }
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 605,
+            "description": "Set a message to be sent to the user when their answer to a\nSession.datePrompt is not a date",
+            "itemtype": "method",
+            "name": "setNotADateMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send",
+                    "type": "String"
+                }
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 614,
+            "description": "Set a message to be sent to the user when their answer to a\nSession.selectionPrompt is ambiguous",
+            "itemtype": "method",
+            "name": "setAmbiguousMessage",
+            "params": [
+                {
+                    "name": "message",
+                    "description": "Message to send",
+                    "type": "String"
+                }
+            ],
+            "class": "Amber.Bot",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 631,
+            "description": "Gets the option with the highest similiarity.",
+            "itemtype": "method",
+            "name": "getClosestOption",
+            "params": [
+                {
+                    "name": "input",
+                    "description": "An input string",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "An array of Strings",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "returns\n\t`{\n\t\tindex:0,\n\t\tsimilarity:4\n\t}`\n\tif the similarity rating is over the threshold set by\n\t`Amber.utils.setOptionDistanceThreshold`.\n\tIf not, returns either `Amber.utils.AMBIGUOUS` or `Amber.utils.NOT_AN_OPTION`.",
+                "type": "Object"
+            },
+            "class": "Amber.utils",
+            "namespace": "Amber"
+        },
+        {
+            "file": "index.js",
+            "line": 684,
+            "description": "Set the threshold similarity for getClosestOption.",
+            "itemtype": "method",
+            "name": "setOptionDistanceThreshold",
+            "params": [
+                {
+                    "name": "threshold",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "Amber.utils",
+            "namespace": "Amber"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " index.js:212"
+        },
+        {
+            "message": "replacing incorrect tag: params with param",
+            "line": " index.js:469"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " index.js:631"
+        }
+    ]
+}
