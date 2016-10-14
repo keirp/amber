@@ -51,7 +51,7 @@ Next, Amber will recursively attempt to fulfill every requirement for `add_equip
 
 ## Installation
 
-npm install amberchat
+`npm install amberchat`
 
 ## API Reference
 
