@@ -53,9 +53,9 @@ Next, Amber will recursively attempt to fulfill every requirement for `add_equip
 
 `npm install amberchat`
 
-## API Reference
+## Documentation
 
-Documentation is provided in /docs
+Documentation is provided at /docs and are available online [here](http://keirp.com/projects/chatbotkit/docs/).
 
 ## License
 
