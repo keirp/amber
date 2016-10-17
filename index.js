@@ -1,4 +1,4 @@
-var fuzzy = require('fuzzy');
+var fuzzy = require('fuzzystringcompare');
 var Fifo = require('fifo');
 
 /**
