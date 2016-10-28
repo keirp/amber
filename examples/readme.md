@@ -1,0 +1,1 @@
+This sample bot is built using Microsoft's LUIS NLP. I've included an exported version of the training data for the sample bot. Use Amber Example.json to create the project on [https://www.luis.ai](https://www.luis.ai) and then put the endpoint into example.js. There are also a few requirements required to run the example. You will need amberchat, readline, and request.

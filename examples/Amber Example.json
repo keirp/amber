@@ -1,0 +1,236 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "Amber Example",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "greeting"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "name"
+    }
+  ],
+  "composites": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hey there!",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hi!",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "howdy!",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hi, my name is keiran!",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "yo, i'm keiran.",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "my name is alice.",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i'm bob.",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "what's up? my name is eve.",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 8,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "hey. what's your name?",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "how's it going?",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "this isn't a greeting.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when is your birthday/",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "normal things to say include this.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let me train you to not recognize everything as a greeting!",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "this project is going to be an example.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "an example on how to make bots.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is 1+1?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how smart are you?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hi my name is keiran",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "no",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "whats up",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "hi im keiran",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "hello. my name is keiran",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 5,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "im keiran",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "hi there",
+      "intent": "greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you? my name is keiran.",
+      "intent": "greeting",
+      "entities": [
+        {
+          "entity": "name",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "how much is water?",
+      "intent": "None",
+      "entities": []
+    }
+  ]
+}
